@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsForums", "NewsForums\NewsForums.csproj", "{1042E4A4-8BF8-49E3-8CE6-580C591BA88A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewsForums.Data", "NewsForums.Data\NewsForums.Data.csproj", "{BF954299-6F86-4408-B70B-E35B8C4523E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1042E4A4-8BF8-49E3-8CE6-580C591BA88A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1042E4A4-8BF8-49E3-8CE6-580C591BA88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1042E4A4-8BF8-49E3-8CE6-580C591BA88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1042E4A4-8BF8-49E3-8CE6-580C591BA88A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF954299-6F86-4408-B70B-E35B8C4523E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF954299-6F86-4408-B70B-E35B8C4523E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF954299-6F86-4408-B70B-E35B8C4523E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF954299-6F86-4408-B70B-E35B8C4523E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A4920DF4-C615-47B5-BECD-E7547AE38E10}
+	EndGlobalSection
+EndGlobal
