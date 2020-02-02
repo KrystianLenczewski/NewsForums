@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 
 using NewsForums.Services;
+using NewsForums.Models;
+using NewsForums.Data;
 
 namespace NewsForums
 {
