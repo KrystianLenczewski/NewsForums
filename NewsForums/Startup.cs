@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NewsForums.Services;
 using NewsForums.Models;
 using NewsForums.Data;
+using NewsForums.Service;
 
 namespace NewsForums
 {
@@ -37,7 +38,7 @@ namespace NewsForums
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddScoped<IForum, ForumService>();
             services.AddMvc();
         }
 

@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NewsForums.Data\NewsForums.Data.csproj" />
+    <ProjectReference Include="..\NewsForums.Service\NewsForums.Service.csproj" />
   </ItemGroup>
 
 </Project>
