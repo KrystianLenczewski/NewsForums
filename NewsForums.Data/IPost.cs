@@ -8,7 +8,7 @@ namespace NewsForums.Data
 {
     public interface IPost
     {
-        Post GetById();
+        Post GetById(int id);
         IEnumerable<Post> GetAll();
         IEnumerable<Post> GetFilteredPosts(string search);
 
