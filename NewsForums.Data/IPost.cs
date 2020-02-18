@@ -17,5 +17,6 @@ namespace NewsForums.Data
         Task EditPostContent(int id,string newContent);
         Task AddReply(PostReply reply);
         IEnumerable<Post> GetPostsByForum(int id);
+        IEnumerable<Post> GetLatestPosts(int v);
     }
 }
