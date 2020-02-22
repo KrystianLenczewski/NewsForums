@@ -40,11 +40,18 @@ namespace NewsForums.Controllers
                 AuthorRating=post.User.Rating,
                 Created=post.CreatedTime,
                 PostContent=post.Content,
-                Replies=replies
+                Replies=replies,
+                IsAuthorAdmin=IsAuthorAdmin(post.User)
             };
             return View(model);
         }
 
+        private bool IsAuthorAdmin(ApplicationUser user)
+        {
+
+            return _userManager.GetRolesAsync(user).Result.Contains("Admin");
+
+        }
 
         public IActionResult Create(int id)
         {
@@ -98,8 +105,8 @@ namespace NewsForums.Controllers
                 AuthorId = reply.User.ProfileImageUrl,
                 AuthorRating = reply.User.Rating,
                 Created = reply.CreatedTime,
-                ReplyContent = reply.Content
-
+                ReplyContent = reply.Content,
+                IsAuthorAdmin=IsAuthorAdmin(reply.User)
             });
      
         }

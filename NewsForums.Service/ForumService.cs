@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NewsForums.Data;
 using NewsForums.Data.Models;
-using NewsForums.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

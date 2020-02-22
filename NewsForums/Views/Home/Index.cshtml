@@ -1,16 +1,16 @@
 ﻿@model NewsForums.Models.Home.HomeIndexModel
 
-
+<p>Learn and share your knowledge with others people</p>
 <div>
-    <form asp-controller="Search"asp-action="Search"method="post">
-    <input asp-for="SearchQuery"type="text"class="homeSearch"placeholder="Search ..."/>
-        </form>
+    <form asp-controller="Search" asp-action="Search" method="post">
+        <input asp-for="SearchQuery" type="text" class="homeSearch" placeholder="Search ..." />
+    </form>
 </div>
 
 <h3 id="latestPosts">Latest Posts</h3>
 <table class="table table-hover">
     <tbody>
-        @foreach(var post in Model.LatestPosts)
+        @foreach (var post in Model.LatestPosts)
         {
             <tr>
                 <td>
@@ -18,7 +18,7 @@
 
                     </div>
                     <div class="postTitle">
-                        <a asp-controller="Post"asp-action="Index"asp-route-id="@post.Id">
+                        <a asp-controller="Post" asp-action="Index" asp-route-id="@post.Id">
                             @post.Title
 
                         </a>
@@ -37,7 +37,7 @@
                             <span>@post.RepliesCount Replies</span>
                         }
 
-                       
+
                     </div>
                 </td>
             </tr>

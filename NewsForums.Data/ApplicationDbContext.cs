@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NewsForums.Data.Models;
-using NewsForums.Models;
+
 
 namespace NewsForums.Data
 {

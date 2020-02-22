@@ -1,6 +1,4 @@
 ﻿using NewsForums.Data.Models;
-using NewsForums.Models;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

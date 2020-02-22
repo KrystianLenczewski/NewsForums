@@ -14,6 +14,7 @@ using NewsForums.Services;
 using NewsForums.Models;
 using NewsForums.Data;
 using NewsForums.Service;
+using NewsForums.Data.Models;
 
 namespace NewsForums
 {

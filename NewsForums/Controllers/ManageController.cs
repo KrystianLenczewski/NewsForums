@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using NewsForums.Data.Models;
 using NewsForums.Models;
 using NewsForums.Models.ManageViewModels;
 using NewsForums.Services;
