@@ -41,7 +41,9 @@ namespace NewsForums.Controllers
                 Created=post.CreatedTime,
                 PostContent=post.Content,
                 Replies=replies,
-                IsAuthorAdmin=IsAuthorAdmin(post.User)
+                IsAuthorAdmin=IsAuthorAdmin(post.User),
+                ForumId=post.Forum.Id,
+                ForumName=post.Forum.Title
             };
             return View(model);
         }
@@ -49,7 +51,8 @@ namespace NewsForums.Controllers
         private bool IsAuthorAdmin(ApplicationUser user)
         {
 
-            return _userManager.GetRolesAsync(user).Result.Contains("Admin");
+            return _userManager.GetRolesAsync(user).
+                Result.Contains("Admin");
 
         }
 

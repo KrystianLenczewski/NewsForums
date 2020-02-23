@@ -17,5 +17,6 @@ namespace NewsForums.Models.Reply
         public bool IsAuthorAdmin { get; set; }
         public int PostId { get; set; }
 
+       
     }
 }
