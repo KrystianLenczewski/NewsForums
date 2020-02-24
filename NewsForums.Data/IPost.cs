@@ -10,7 +10,7 @@ namespace NewsForums.Data
     {
         Post GetById(int id);
         IEnumerable<Post> GetAll();
-        IEnumerable<Post> GetFilteredPosts(string search);
+        IEnumerable<Post> GetFilteredPosts(Forum forum,string search);
 
         Task Add(Post post);
         Task Delete(int id);

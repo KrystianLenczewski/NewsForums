@@ -57,9 +57,11 @@ namespace NewsForums.Service
                  .First();
         }
 
-        public IEnumerable<Post> GetFilteredPosts(string search)
+        public IEnumerable<Post> GetFilteredPosts(Forum forum,string searchQuery)
         {
-            throw new NotImplementedException();
+            //var forum = _context.Forums.Find(id);
+            return string.IsNullOrEmpty(searchQuery)?forum.Posts:
+                forum.Posts.Where(post => post.Title.Contains(searchQuery) || post.Content.Contains(searchQuery));
         }
 
         public IEnumerable<Post> GetLatestPosts(int v)
