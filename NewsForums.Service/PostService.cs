@@ -63,7 +63,11 @@ namespace NewsForums.Service
             return string.IsNullOrEmpty(searchQuery)?forum.Posts:
                 forum.Posts.Where(post => post.Title.Contains(searchQuery) || post.Content.Contains(searchQuery));
         }
-
+        public IEnumerable<Post> GetFilteredPosts( string searchQuery)
+        {
+            return GetAll().Where(post => post.Title.Contains(searchQuery)
+            || post.Content.Contains(searchQuery));
+        }
         public IEnumerable<Post> GetLatestPosts(int v)
         {
           return  GetAll().OrderByDescending(post => post.CreatedTime).Take(v);
