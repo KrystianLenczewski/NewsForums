@@ -16,9 +16,10 @@ namespace NewsForums.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
 
 
-        protected ReplyController(IPost postService)
+        public ReplyController(IPost postService,UserManager<ApplicationUser> userManager)
         {
             _postService = postService;
+            _userManager = userManager;
         }
 
 
@@ -45,7 +46,7 @@ namespace NewsForums.Controllers
 
             };
 
-            return View();
+            return View(model);
         }
 
         [HttpPost]

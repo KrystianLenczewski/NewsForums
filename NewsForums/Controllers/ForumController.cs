@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NewsForums.Data;
 using NewsForums.Data.Models;
@@ -74,6 +77,14 @@ ForumList = forums
             var forum = post.Forum;
             return BuildForumListing(forum);
         }
+        public IActionResult Create()
+        {
+            var model = new AddForumModel();
+            return View(model);
+        }
+
+   
+
         private ForumListingModel BuildForumListing(Forum forum)
         {
             
