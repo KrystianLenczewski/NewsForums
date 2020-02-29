@@ -1,35 +1,63 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @model NewsForums.Models.ApplicationUser.ProfileModel
+
 @inject UserManager<NewsForums.Data.Models.ApplicationUser> UserManager
 
+
+
 <div class="container body-content">
-
     <div class="row sectionHeader">
-        <div class="sectionHeading">
+        <div class="sectionHeading noBorder">
             User Profile
-
         </div>
-        
+        @if (User.IsInRole("Admin"))
+        {
+            <form method="post" asp-controller="Profile" asp-action="Deactivate" asp-route-id="@Model.UserId">
+                <div>
+                    <button class="btn btn-danger" active="@Model.IsActive">Deactivate User</button>
+                </div>
+            </form>
+        }
     </div>
-    <div class="row userProfile">
-
-        <div class="col-md-4">
-            <div id="userProfileImage"style="background-image:url(@Model.ProfileImageUrl")>
-           
+    @if (Context.User.Identity.IsAuthenticated)
+    {
+        <div class="row userProfile">
+            <div class="col-md-4">
+                <div id="userProfileImage" style="background-image: url(@Model.ProfileImageUrl); background-size:100%;"></div>
+                @if (Context.User.Identity.Name == Model.UserName)
+                {
+                    <form method="post" enctype="multipart/form-data" asp-controller="Profile" asp-action="UploadProfileImage">
+                        <div id="upload">
+                            <label class="btn btn-default btn-file">
+                                Browse <input type="file" name="file" style="display: none;">
+                            </label>
+                        </div>
+                        <button type="submit" id="btn-profile" class="btn btn-default">Submit</button>
+                    </form>
+                }
+                <div class="col-md-8">
+                    <span id="userName">@Model.UserName</span>
+                    @if (@Model.IsAdmin)
+                    {
+                        <span class="isAdmin">Admin</span>
+                    }
+                    <span id="userRating">Current Rating: @Model.UserRating</span>
+                    <span id="userEmailLabel">Email: @Model.Email</span>
+                    <span id="userCreatedLabel">Member Since: @Model.MemberSince</span>
+                    <span id="userActiveLabel">
+                        Status:
+                        @if (!@Model.IsActive)
+                        {
+                            <span class="inactiveUser">Inactive</span>
+                        }
+                        else
+                        {
+                            <span>Active</span>
+                        }
+                    </span>
+                </div>
             </div>
-            @if(User.Identity.Name==Model.UserName)
-            {
-                <form method="post"enctype="multipart/form-data"asp-controller="Profile"asp-action="UploadProfileImage">
-<div id="upload">
-    <label class="btn btn-default btn-file">
-        Browse<input type="file"name="file"style="display:none" />
-    </label>
-</div>
-                    <button type="submit"id="btn-profile"class="btn btn-default">Submit</button>
-</form>
-            }
+            
         </div>
-
-    </div>
-
+    }
 </div>

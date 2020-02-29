@@ -16,8 +16,11 @@ namespace NewsForums.Data
         Task Add(Post post);
         Task Delete(int id);
         Task EditPostContent(int id,string newContent);
-        Task AddReply(PostReply reply);
+      
         IEnumerable<Post> GetPostsByForum(int id);
         IEnumerable<Post> GetLatestPosts(int v);
+
+          Task AddReply(PostReply reply);
+       
     }
 }
