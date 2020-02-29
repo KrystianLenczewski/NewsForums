@@ -33,7 +33,7 @@ namespace NewsForums.Controllers
             var model = new ForumIndexModel
             {
                 
-ForumList = forums
+                ForumList = forums
             };
             return View(model);
         }
@@ -76,6 +76,18 @@ ForumList = forums
         {
             var forum = post.Forum;
             return BuildForumListing(forum);
+        }
+        [HttpPost]
+        public async Task<IActionResult>AddForum(AddForumModel model)
+        {
+            var forum = new Forum
+            {
+                Title=model.Title,
+                Description=model.Description,
+                CreatedTime=DateTime.Now
+            };
+            await _forumService.Create(forum);
+            return RedirectToAction("Index", "Forum");
         }
         public IActionResult Create()
         {
