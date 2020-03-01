@@ -18,22 +18,26 @@
     color:#444;
     width:190px;
 }
+#replyDivider {
+    background-color: white;
+}
 .postIndexTitle{
     font-size:1.4em;
 }
 #postContentContainer{
     color:#222;
-    padding:22px;
+    padding:33px;
     border-left:1px solid #ddd;
 }
 .postAuthorRating{
     font-size:0.9em;
     color:#159;
 }
+
+
 #postIndexContent {
     background-color: white;
-    box-shadow:0 10px 20px rgba(0,0,0,0.2),0 6px 6px rgba(0,0,0,0.3);
-
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2),0 6px 6px rgba(0,0,0,0.3);
 }
 #forumIndexTable td{
     background-color:rgba(255,255,255,0.9);
@@ -57,10 +61,27 @@
     font-weight:bold;
 
 }
-.sectionHeader{
-    background-color:rgba(0,0,0,0.9);
-    padding:8px 0 24px 24px;
 
+.replyContent
+{
+    display:table;
+    background-color:#fff;
+    border-bottom:1px solid #aaa;
+    width:inherit;
+    height:40px;
+}
+.hasRecentPost{
+    padding:2px;
+    background-color:#fe552f;
+    color:#fff;
+    text-align:center;
+    border-radius:1px;
+    width:36px;
+
+}
+.sectionHeader {
+    background-color: rgba(0,0,0,0.9);
+    padding: 8px 0 24px 24px;
 }
 .sectionHeading{
     color:white;

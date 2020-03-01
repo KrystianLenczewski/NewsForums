@@ -8,33 +8,45 @@
             </span>
             <span id="headingBtn">
                 <a asp-controller="Forum" asp-action="Topic"
-                   asp-route-id="@Model.ForumId" class="btn btn-back">Back to @Model.ForumName</a>
+                   asp-route-id="@Model.ForumId" class="btn btn-back">Back to@Model.ForumName</a>
             </span>
         </div>
     </div>
 
 
 
-
-    <div class="postIndexContent">
-        <div class="col-md-3 postAuthorContainer">
-            <div class="postAuthorImage" style="background-image:url(@Model.AuthorImageUrl);"></div>
-            <a asp-controller="Profile" asp-action="Detail" asp-route-id="@Model.AuthorId">
+    <div class="container ">
+        <div class="row replyContent">
+            <div class="col-xs-4">
                 @Model.AuthorName
-            </a>
-            <span class="postData">@Model.Created</span>
-            @if (Model.IsAuthorAdmin)
-            {
-                <span class="disabledAdmin smaller">Admin</span>
-            }
-        </div>
-        <div class="col-md-9 postContentContainer">
-
-            <div class="postContent">
+                <a asp-controller="Profile" asp-action="Detail" asp-route-id="@Model.AuthorId"></a>
+                <span class="postData">@Model.Created</span>
+            </div>
+            <div class="col-xs-8">
                 @Html.Raw(Model.PostContent)
             </div>
         </div>
     </div>
+    @*<div class="postIndexContent">
+            <div class="col-md-3 postAuthorContainer">
+                <div class="postAuthorImage" style="background-image:url(@Model.AuthorImageUrl);"></div>
+                <a asp-controller="Profile" asp-action="Detail" asp-route-id="@Model.AuthorId">
+                    @Model.AuthorName
+                </a>
+                <span class="postData">@Model.Created</span>
+
+
+                <div class="col-md-9 ">
+                    @Html.Raw(Model.PostContent)
+
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+
     <div class="row" id="replyDivider"></div>
     @if (User.Identity.IsAuthenticated)
     {
@@ -50,27 +62,28 @@
     {
         foreach (var reply in Model.Replies)
         {
-            <div class="row replyContent">
-                <div class="col-md-3 replyAuthorContainer">
-                    <div class="postAuthorImage" style="background-image:url(@reply.AuthorImageUrl)">
-                        <a asp-controller="Profile" asp-action="Detail" asp-route-id="@reply.AuthorId">
-                            @reply.AuthorName
-                        </a>
-                        @if (reply.IsAuthorAdmin)
-                        {
-                            <div class="isAdmin smaller">Admin</div>
-                            <br />
-
-                        }
-                        <span>@reply.Created</span>
+            <div class="container">
+                <div class="row replyContent" >
+                    <div class="col-xs-4">
+                        @reply.AuthorName
+                        <a asp-controller="Profile" asp-action="Detail" asp-route-id="@Model.AuthorId"></a>
+                        <span class="postData">@reply.Created</span>
                     </div>
-                    <div class="col-md-9 replyContentContainer">
-                        <div class="postContent">
-                            @Html.Raw(reply.ReplyContent)
-                        </div>
+                    <div class="col-xs-8">
+                        @Html.Raw(reply.ReplyContent)
                     </div>
                 </div>
             </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <div class="row">
+                    <span>
+                        <a asp-controller="Reply" asp-action="Create" asp-route-id="@Model.Id"
+                           class="btn btn-newReply">Post Reply</a>
+                    </span>
+                </div>
+            }
+
         }
     }
     else

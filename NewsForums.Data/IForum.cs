@@ -14,6 +14,7 @@ namespace NewsForums.Data
         Task Delete(int forumId);
         Task UpdateForumTitle(int forumId, string newTitle);
         Task UpdateForumDescription(int forumId, string newDescription);
-
+        IEnumerable<ApplicationUser> GetActiveUsers(int id);
+        bool HasRecentPost(int id);
     }
 }
